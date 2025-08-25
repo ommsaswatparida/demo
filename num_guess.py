@@ -1,14 +1,17 @@
 import random
-while True :
-    choice = int(input("Guess the number between 1 and 100:"))
-    i = random.randint(1,100)
-    if choice == i :
-        print("Congratulations! You guessed the number")
-    elif choice >> i:
-        print("Too high!")
-    elif choice << i:
-        print("Too low!")
-        break 
-    else:
-        print("Please enter a valid number")
+i = random.randint(1,100)   #i is the number to guess
 
+while True :
+    try:
+        choice = int(input("Guess the number between 1 and 100:"))
+        
+        if choice > i:
+            print("Too high!")
+        elif choice < i:
+            print("Too low!")
+        else:
+            print("Congratulations! you guessed the number")
+            break 
+    
+    except ValueError:
+        print("Please enter a valid number")
